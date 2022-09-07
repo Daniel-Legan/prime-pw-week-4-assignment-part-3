@@ -24,7 +24,6 @@ function listItems(array) {
 function empty(array) {
     while(array.length > 0){
         array.pop(); //removes last item in an array
-        console.log(array);
     }
 }
 
@@ -39,8 +38,9 @@ console.log(`Basket is now ${basket}`); //not sure what $ is used for
 //performing console.log of each element of the basket array
 listItems(basket);
 console.log(basket);
-
 //performing empty function
 empty(basket);
+addItem('tomato');
+addItem('celery');
 //displaying contents of basket
 console.log(basket);
