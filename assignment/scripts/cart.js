@@ -55,11 +55,13 @@ console.log('Adding bananas (expect true)', addItem('bananas'));
 console.log('Adding oranges (expect true)', addItem('oranges'));
 console.log('Adding grapes (expect true)', addItem('grapes'));
 
-//performing console.log of each element of the basket array
+//performing console.log of each element of the basket on a new line
 listItems(basket);
 console.log(basket);
+
 //performing empty function
 empty(basket);
+
 addItem('tomato');
 addItem('celery');
 addItem('spinach');
@@ -67,8 +69,7 @@ addItem('peach');
 addItem('watermelon');
 addItem('chips'); //not added to basket
 
-console.log(isFull(basket)); //is the basket full?
-//displaying contents of basket
+console.log('Is the basket full?:', isFull(basket));
 console.log('The items in the basket are:', basket);
-console.log(removeItem('spinach'));
+console.log('Removing item:', removeItem('spinach'));
 console.log('The items in the basket are now:', basket);
