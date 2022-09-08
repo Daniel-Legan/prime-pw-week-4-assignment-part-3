@@ -8,8 +8,12 @@ const maxItems = 5;
 
 //adding an item to the basket
 function addItem(item) {
-    basket.push(item);
-    return true;
+    if(!isFull(basket)) {
+        basket.push(item); //"if the basket is not full, add the item to the basket"
+        return true;
+    }else {
+        return false; //"if the basket is full, do not add the item to the basket"
+    }
 }
 
 //printing each item of an array of unknown length
@@ -37,6 +41,14 @@ function isFull(array) {
     }
 }
 
+function removeItem(item) {
+    if(basket[basket.indexOf(item)] === item) { 
+        return basket.splice(basket.indexOf(item), 1);
+    }else {
+        return null;
+    }
+}
+
 /*--------------------*/
 console.log('Adding apples (expect true)', addItem('apples'));
 console.log('Adding bananas (expect true)', addItem('bananas'));
@@ -50,9 +62,13 @@ console.log(basket);
 empty(basket);
 addItem('tomato');
 addItem('celery');
-addItem('celery');
-addItem('celery');
+addItem('spinach');
+addItem('peach');
+addItem('watermelon');
+addItem('chips'); //not added to basket
 
+console.log(isFull(basket)); //is the basket full?
 //displaying contents of basket
-console.log(basket);
-console.log(isFull(basket));
+console.log('The items in the basket are:', basket);
+console.log(removeItem('spinach'));
+console.log('The items in the basket are now:', basket);
